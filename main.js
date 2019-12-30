@@ -1,6 +1,5 @@
 var Discord = require("discord.js");
 var bot = new Discord.Client();
-var konfiguracja = require("./konfiguracja.json");
 const ascii = require("ascii-art");
 const moment = require("moment");
 const fs = require("fs");
@@ -14,7 +13,7 @@ const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 bot.on('ready', () => {
     console.log(`The bot has been turned on! His name is ${bot.user.tag}. Prefix: "bc!". I jest na ${bot.guilds.size} serwerach!`);
     bot.user.setStatus(`dnd`);
-    bot.user.setActivity(`Minecraft 1.13-1.14x`, {type: "WATCHING"});
+    bot.user.setActivity(`Commands will be available soon`, {type: "PLAYING"});
 });
 
 bot.on("message", async message => {
@@ -39,8 +38,8 @@ bot.on("message", async message => {
 
     let kanalPropozycji = kanalyPropozycji[message.guild.id].kanalyPropozycji;
 
-    let prefix = prefixy[message.guild.id].prefixy;
-    //let prefix = konfiguracja.prefix;
+    //let prefix = prefixy[message.guild.id].prefixy;
+    let prefix = "sdlklwdls,dlwldlw";
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let msg = message.content.startsWith;
@@ -63,8 +62,8 @@ bot.on("message", async message => {
         message.channel.send(sayMessage);
     }
 
-    if(cmd === `<@456018252158730250>`){
-        message.channel.send(`Mój prefix na tym serwerze to: ` + "`" + `${prefix}` + "`");
+    if(cmd === `<@646073962941644832>`){
+        message.channel.send("No i co go pingujesz? Bana chcesz =)?");
         //let cmdlogs = message.guild.channels.find(`id`, "471972734851612672");
         //cmdlogs.send(`${bot.emojis.find(`name`, 'alert')} The **${message.author.tag}**(**${message.author.id}**) user has mention the bot on the **${message.guild.name}**(**${message.guild.id}**) server.`);
     }
